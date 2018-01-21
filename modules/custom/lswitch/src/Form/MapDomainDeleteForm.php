@@ -1,14 +1,8 @@
 <?php
 
-/**
- * @file
- * Contains \lswitch\Form\ConfirmDeleteForm.
- */
-
 namespace Drupal\lswitch\Form;
 
 use Drupal\Core\Form\ConfirmFormBase;
-use Drupal\Core\Form\ConfirmFormInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -40,26 +34,26 @@ class MapDomainDeleteForm extends ConfirmFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $lid = $form['storage'];
 
-    //start db connection
+    // Start db connection.
     $connection = Database::getConnection();
-    // now start transaction will help us in rollback if something bad happens
+    // Now start transaction will help us in rollback if something bad happens.
     $txn = $connection->startTransaction();
     try {
       $query = $connection->delete('domain_lang');
       $query->condition('lid', $lid);
       $query->execute();
-      //set message
+      // Set message.
       drupal_set_message('Successfully deleted');
-      //redirect to the listing page
+      // Redirect to the listing page.
       $response = new RedirectResponse('/admin/config/regional/lswitch');
       $response->send();
-      }
+    }
     catch (Exception $e) {
-        // Something went wrong somewhere, so roll back now.
-        $txn->rollBack();
-        // Log the exception to watchdog.
-        \Drupal::logger('type')->error($e->getMessage());
-      }
+      // Something went wrong somewhere, so roll back now.
+      $txn->rollBack();
+      // Log the exception to watchdog.
+      \Drupal::logger('type')->error($e->getMessage());
+    }
   }
 
   /**

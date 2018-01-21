@@ -4,7 +4,7 @@ lswitch.settings:
     _controller: 'Drupal\lswitch\Controller\LanguageMapping::display'
     _title: 'Domain based language switch mapping'
   requirements:
-    _permission: 'access content'
+    _permission: 'Administer language switch'
 
 lswitch.add:
   path: '/admin/config/regional/lswitch/add'
@@ -12,7 +12,7 @@ lswitch.add:
     _form: 'Drupal\lswitch\Form\MapDomainForm'
     _title: 'Map domain with language'
   requirements:
-    _permission: 'access content'
+    _permission: 'Administer language switch'
 
 lswitch.update:
   path: '/admin/config/regional/lswitch/{lid}/update'
@@ -20,7 +20,7 @@ lswitch.update:
     _form: 'Drupal\lswitch\Form\MapDomainUpdateForm'
     _title: 'Map domain with language'
   requirements:
-    _permission: 'access content'
+    _permission: 'Administer language switch'
 
 lswitch.delete:
   path: '/admin/config/regional/lswitch/{lid}/delete'
@@ -28,4 +28,4 @@ lswitch.delete:
     _form: 'Drupal\lswitch\Form\MapDomainDeleteForm'
     _title: 'Map domain with language'
   requirements:
-    _permission: 'access content'
+    _permission: 'Administer language switch'
