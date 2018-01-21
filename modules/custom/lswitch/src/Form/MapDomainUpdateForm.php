@@ -64,7 +64,7 @@ class MapDomainUpdateForm extends FormBase {
     $query->condition('lid', $lid);
     $query->execute();
     drupal_set_message('Successfully Updated');
-    $response = new RedirectResponse('admin/config/regional/lswitch');
+    $response = new RedirectResponse('/admin/config/regional/lswitch');
     $response->send();
   }
 
