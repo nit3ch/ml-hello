@@ -1,0 +1,32 @@
+<?php
+
+function lswitch_schema() {
+  $schema['domain_lang'] = array(
+    // Example (partial) specification for table "node".
+    'description' => 'The base table for lwitch.',
+    'fields' => array(
+      'lid' => array(
+        'description' => 'The primary identifier for domain_lang.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'domain' => array(
+        'description' => 'The domain with with language will ne mapped',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'language' => array(
+        'description' => 'Mapped lang code',
+        'type' => 'varchar',
+        'length' => 25,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+    ),
+    'primary key' => array('lid'),
+  );
+  return $schema;
+}

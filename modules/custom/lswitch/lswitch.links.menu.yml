@@ -1,0 +1,5 @@
+lswitch.settings:
+  title: Language Switch
+  description: 'Switch langauge based on domain'
+  route_name: lswitch.settings
+  parent: system.admin_config_regional

@@ -1,0 +1,5 @@
+services:
+  lswitch_event_subscriber:
+    class: Drupal\lswitch\EventSubscriber\lswitchSubscriber
+    tags:
+      - {name: event_subscriber}
