@@ -7,6 +7,9 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageManager;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\Core\Database\Database;
+use Drupal\language\Entity\ConfigurableLanguage;
+
+
 
 /**
  * Form that displays list all all language switch avialable.
@@ -45,12 +48,16 @@ class MapDomainForm extends FormBase {
   }
 
   /**
-   *
+   *  {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $domain = $form_state->getValue('domain');
     $lang = $form_state->getValue('language');
 
+    // add the language first
+    // todo: Chekc if it is already enabled
+    $language = ConfigurableLanguage::createFromLangcode('hi');
+    $language->save();
     // Start db connection.
     $connection = Database::getConnection();
     // Now start transaction will help us in rollback if something bad happens.
