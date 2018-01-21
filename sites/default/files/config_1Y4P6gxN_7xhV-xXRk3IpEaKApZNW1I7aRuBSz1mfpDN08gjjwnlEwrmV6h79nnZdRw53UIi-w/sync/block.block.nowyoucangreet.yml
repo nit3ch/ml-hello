@@ -1,0 +1,25 @@
+uuid: b439ed6e-5242-47f9-8a51-cdf78f7ecddc
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a0c35ad7-27e9-42d5-a8f2-ae38955b963b'
+  module:
+    - block_content
+  theme:
+    - bartik
+id: nowyoucangreet
+theme: bartik
+region: sidebar_first
+weight: -7
+provider: null
+plugin: 'block_content:a0c35ad7-27e9-42d5-a8f2-ae38955b963b'
+settings:
+  id: 'block_content:a0c35ad7-27e9-42d5-a8f2-ae38955b963b'
+  label: 'Now you can greet'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
