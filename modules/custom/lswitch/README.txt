@@ -49,6 +49,7 @@ CONFIGURATION
 
     - Add entry to host file (/etc/hosts)
 
+      127.0.0.1 hello.local
       127.0.0.1 india.hello.local
       127.0.0.1 netherlands.hello.local
       127.0.0.1 world.hello.local
